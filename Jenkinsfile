@@ -23,6 +23,18 @@ pwd'''
           }
         }
 
+        stage('QA TEST') {
+          steps {
+            echo 'test code'
+          }
+        }
+
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deployed'
       }
     }
 
