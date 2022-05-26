@@ -10,8 +10,19 @@ pwd'''
     }
 
     stage('test') {
-      steps {
-        echo 'this is test step'
+      parallel {
+        stage('test') {
+          steps {
+            echo 'this is test step'
+          }
+        }
+
+        stage('test parallelly') {
+          steps {
+            echo 'print message same'
+          }
+        }
+
       }
     }
 
